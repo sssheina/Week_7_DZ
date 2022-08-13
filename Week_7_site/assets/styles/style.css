@@ -1,0 +1,324 @@
+@font-face {
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: bold;
+    src: url("assets/fonts/font/CircularStd-Medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    font-style: normal;
+    font-weight: bold;
+    src: url("assets/fonts/Sofia/Sofia-Bold.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    font-style: normal;
+    font-weight: bold;
+    src: url("assets/fonts/Sofia/Sofia-Medium.woff") format("woff");
+  }
+
+  body {
+    display: grid;
+    grid-template-areas:
+      "nav header header header header"
+      "nav main main main main"
+      "nav main main main main"
+      "nav main main main main"
+      "nav main main main main";
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    height: 100vh;
+    margin: 30px;
+  }
+  header {
+    grid-area: header;
+    height: 10vh;
+  }
+  .header_in {
+    display: grid;
+    grid-template-rows: 0.5fr;
+    grid-template-columns: 4fr 4fr;
+  }
+  .nav_header > a {
+    margin: 2%;
+    font-family: "Circular Std", sans-serif;
+    font-weight: bold;
+  }
+  /*a:hover {
+          text-decoration: underline;
+          }*/
+
+  .nav_header:hover {
+    cursor: pointer;
+  }
+  .title1 {
+    font-family: "Circular Std", sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    position: relative;
+  }
+
+  .title1::after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    left: 50%;
+    bottom: -10px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .nav_header:hover .title1::after {
+    width: 100%;
+    left: 0;
+  }
+
+  .search {
+    padding: 5px 15px;
+    display: inline-block;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+  }
+  [type="search"] {
+    border: none;
+    outline: none;
+  }
+  .zoom {
+    border: none;
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    padding: 0;
+  }
+  .zoom::before {
+    content: url(/assets/images/search.png);
+  }
+  .form {
+    grid-column: 1/2;
+  }
+  input {
+    font-family: "Circular Std", sans-serif;
+  }
+  .nav_aside {
+    grid-area: nav;
+  }
+
+  .nav_aside {
+    list-style-type: none;
+    font-family: "Sofia pro", sans-serif;
+    font-weight: bolder;
+    margin: 2%;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .icon {
+    margin: 2%;
+    padding: 2%;
+  }
+
+  .nav_aside_in {
+    display: grid;
+    grid-template-areas:
+      "logo logo"
+      "logo logo"
+      "explore explore"
+      "icon1 link1"
+      "icon2 link2"
+      "icon3 link3"
+      "icon4 link4"
+      "icon5 link5"
+      "icon6 link6"
+      "icon7 link7"
+      "2 2"
+      "2 2"
+      "2 2"
+      "2 2"
+      "2 2"
+      "2 2"
+      "2 2"
+      "2 2"
+      "icon8 help";
+    grid-template-rows: repeat(19, 1fr);
+    grid-template-columns: 10% 2fr;
+    grid-gap: 10px;
+    height: 100vh;
+    margin: 0px;
+  }
+  #logo {
+    grid-area: logo;
+    text-align: start;
+  }
+  #explore {
+    grid-area: explore;
+    font-family: "Sofia pro", sans-serif;
+    font-size: 20px;
+    text-align: start;
+  }
+
+  #icon1 {
+    grid-area: icon1;
+    text-align: end;
+  }
+  #icon2 {
+    grid-area: icon2;
+    text-align: end;
+  }
+  #icon3 {
+    grid-area: icon3;
+    text-align: end;
+  }
+  #icon4 {
+    grid-area: icon4;
+    text-align: end;
+  }
+  #icon5 {
+    grid-area: icon5;
+    text-align: end;
+  }
+  #icon6 {
+    grid-area: icon6;
+    text-align: end;
+  }
+  #icon7 {
+    grid-area: icon7;
+    text-align: end;
+  }
+  #icon8 {
+    grid-area: icon8;
+    text-align: end;
+  }
+
+  #link1 {
+    grid-area: link1;
+    font-family: "Sofia pro", sans-serif;
+  }
+  #link2 {
+    grid-area: link2;
+    font-family: "Sofia pro", sans-serif;
+  }
+  #link3 {
+    grid-area: link3;
+    font-family: "Sofia pro", sans-serif;
+  }
+  #link4 {
+    grid-area: link4;
+    font-family: "Sofia pro", sans-serif;
+  }
+  #link5 {
+    grid-area: link5;
+    font-family: "Sofia pro", sans-serif;
+  }
+  #link6 {
+    grid-area: link6;
+    font-family: "Sofia pro", sans-serif;
+  }
+  #link7 {
+    grid-area: link7;
+    font-family: "Sofia pro", sans-serif;
+  }
+  #help {
+    grid-area: help;
+    font-family: "Sofia pro", sans-serif;
+    text-align: center;
+  }
+  .nav_aside > img {
+    justify-items: end;
+  }
+  main {
+    grid-area: main;
+  }
+  .cards-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, minmax(200px, 260px));
+    grid-template-rows: repeat(4, 180px);
+    grid-template-areas:
+      "wide1 wide1 product1 product2"
+      "wide2 wide2 product1 product2"
+      "product3 product4 wide3 wide3"
+      "product3 product4 wide4 wide4";
+  }
+
+  @media (max-width: 889px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, minmax(180px, 260px));
+      grid-template-rows: repeat(8, 180px);
+      grid-template-areas:
+        "wide1 wide1"
+        "wide2 wide2"
+        "product1 product2"
+        "product1 product2"
+        "wide3 wide3"
+        "wide4 wide4"
+        "product3 product4"
+        "product3 product4";
+    }
+  }
+  @media (max-width: 409px) {
+    .cards-grid {
+      width: 100%;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: repeat(12, 140px);
+      grid-template-areas:
+        "wide1"
+        "wide2"
+        "product1"
+        "product1"
+        "product2"
+        "product2"
+        "wide3"
+        "wide4"
+        "product3"
+        "product3"
+        "product4"
+        "product4";
+    }
+  }
+
+  .card-demo_sale-1 {
+    grid-area: wide1;
+  }
+  .card-demo_sale-2 {
+    grid-area: wide2;
+  }
+  .card-demo_product-1 {
+    grid-area: product1;
+  }
+  .card-demo_product-2 {
+    grid-area: product2;
+  }
+  .card-demo_product-3 {
+    grid-area: product3;
+  }
+  .card-demo_product-4 {
+    grid-area: product4;
+  }
+  .card-demo_sale-3 {
+    grid-area: wide3;
+  }
+  .card-demo_sale-4 {
+    grid-area: wide4;
+  }
+
+  .card-demo_sale-1,
+  .card-demo_sale-2,
+  .card-demo_product-1,
+  .card-demo_product-2,
+  .card-demo_sale-3,
+  .card-demo_sale-4,
+  .card-demo_product-3,
+  .card-demo_product-4 {
+    text-align: center;
+  }
+  .cards-grid img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
